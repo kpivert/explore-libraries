@@ -46,6 +46,14 @@ ipt %>%
   count(NeedsCompilation) %>%
   mutate(prop = n / sum(n))
 
+
+## Adding a Figure 
+ipt %>%
+  count(NeedsCompilation) %>%
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(x=NeedsCompilation, y= prop))+
+    geom_bar(stat = "identity")
+
 ##   * how break down re: version of R they were built on
 ipt %>%
   count(Built) %>%
