@@ -1,7 +1,7 @@
 01\_explore-libraries\_jenny.R
 ================
 kurti
-Wed Jan 31 14:39:43 2018
+Wed Jan 31 14:44:03 2018
 
 ``` r
 ## how jenny might do this in a first exploration
@@ -120,6 +120,17 @@ ipt %>%
     ## 3 <NA>                 8 0.0476
 
 ``` r
+## Adding a Figure 
+ipt %>%
+  count(NeedsCompilation) %>%
+  mutate(prop = n / sum(n)) %>% 
+  ggplot(aes(x=NeedsCompilation, y= prop))+
+    geom_bar(stat = "identity")
+```
+
+![](01_explore-libraries_jenny_files/figure-markdown_github/unnamed-chunk-4-1.png)
+
+``` r
 ##   * how break down re: version of R they were built on
 ipt %>%
   count(Built) %>%
@@ -228,6 +239,7 @@ ipt2 %>%
     ##  httr         1.3.1   2017-08-20 CRAN (R 3.4.2)
     ##  jsonlite     1.5     2017-06-01 CRAN (R 3.4.2)
     ##  knitr        1.19    2018-01-29 CRAN (R 3.4.2)
+    ##  labeling     0.3     2014-08-23 CRAN (R 3.4.1)
     ##  lattice      0.20-35 2017-03-25 CRAN (R 3.4.2)
     ##  lazyeval     0.2.1   2017-10-29 CRAN (R 3.4.2)
     ##  lubridate    1.7.1   2017-11-03 CRAN (R 3.4.2)
