@@ -1,11 +1,12 @@
 01\_explore-libraries\_jenny.R
 ================
 kurti
-Wed Jan 31 14:29:04 2018
+Wed Jan 31 14:39:43 2018
 
 ``` r
 ## how jenny might do this in a first exploration
 ## purposely leaving a few things to change later!
+## And adding my own hacks to this great document....
 
 
 # 1. Install Packages  ----------------------------------------------------
@@ -48,10 +49,14 @@ Wed Jan 31 14:29:04 2018
 
     ## Warning: package 'devtools' was built under R version 3.4.3
 
+``` r
+# Looking at Libraries ----------------------------------------------------
+```
+
 Which libraries does R search for packages?
 
 ``` r
-.libPaths()
+  .libPaths()
 ```
 
     ## [1] "C:/Users/kurti/OneDrive/Documents/R/win-library/3.4"
@@ -146,6 +151,9 @@ all_default_pkgs <- list.files(.Library)
 all_br_pkgs <- ipt %>%
   filter(Priority %in% c("base", "recommended")) %>%
   pull(Package)
+all_br_pkgs_versions <- ipt %>%
+  filter(Priority %in% c("base", "recommended")) %>%
+  pull(Version)
 setdiff(all_default_pkgs, all_br_pkgs)
 ```
 

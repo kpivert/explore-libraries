@@ -4,6 +4,7 @@
 
 ## how jenny might do this in a first exploration
 ## purposely leaving a few things to change later!
+## And adding my own hacks to this great document....
 
 
 # 1. Install Packages  ----------------------------------------------------
@@ -12,9 +13,13 @@
   require(fs)
   require(devtools)
 
+# Looking at Libraries ----------------------------------------------------
+
+
 
 #' Which libraries does R search for packages?
-.libPaths()
+
+  .libPaths()
 
 ## let's confirm the second element is, in fact, the default library
 .Library
@@ -62,7 +67,11 @@ all_default_pkgs <- list.files(.Library)
 all_br_pkgs <- ipt %>%
   filter(Priority %in% c("base", "recommended")) %>%
   pull(Package)
+all_br_pkgs_versions <- ipt %>%
+  filter(Priority %in% c("base", "recommended")) %>%
+  pull(Version)
 setdiff(all_default_pkgs, all_br_pkgs)
+
 
 ## study package naming style (all lower case, contains '.', etc
 
