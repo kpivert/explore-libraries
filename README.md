@@ -5,3 +5,7 @@ This is a line I added locally.
 
 This is a line I added from GitHub. 
 ## Woohoo
+
+Let's look at a file!
+
+[01_explore_libraries_jenny.md](01_explore_libraries_jenny.md)
