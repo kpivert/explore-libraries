@@ -15,4 +15,4 @@ I had coffee.
 
 Wingardium Leviosa. 
 
-Wingardium Leviosaaaah. 
+WinGARdium Leviosaaaah. 
