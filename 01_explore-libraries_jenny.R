@@ -12,6 +12,8 @@
   require(tidyverse)
   require(fs)
   require(devtools)
+  require(extrafont)
+  loadfonts(quiet=T)
 
 # Looking at Libraries ----------------------------------------------------
 
